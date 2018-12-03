@@ -1,25 +1,43 @@
+#In this program we will be adding while loops to our first version of aliens.py
+#This will show how we can be effienct and make our program anti-nonsense proof.
+
+#This part of the code is the initialized variables.
+# This was used to set the foundation of our loop code
 startAlien = int(-1)
 elapsedWeeks = int(-1)
 week = str("week")
 alienValid = bool(False)
 weekValid = bool(False)
 
+#------------------------#Explanation/user input----------------------------
+
+#In this section we explained to the user the purpose of this program
+#We then asked questions to gather information from the user
+#we did this by using our initilized varibles "startAlien & elapsedWeeks"
 print("This program will calculate the alien population after receiving two")
 print("inputs from you; the amount of aliens that landed on earth, and how")
 print("many weeks have elapsed since they landed.\n")
 startAlien = int(input("How many aliens landed on earth?\n"))
 elapsedWeeks = int(input("How many weeks have elapsed since they landed?\n"))
 
-if startAlien <= 0:
+#-----------------------------#Calculation----------------------------------
+
+#This section is the calculations that will determine if the user inputed a valid answer
+#This would be the semi-dumby answer proof code which sends the user to the end
+#if inputed a invalid answer like a negative number
+ if startAlien <= 0:
     print("Since your inputs are less than 1, mathematically the alien")
     print("population will make no sense. If you want to try the program with")
     print("numbers that are greater than 0, please run it again.")
-    
+
 if elapsedWeeks <= 0:
     print("Since your inputs are less than 1, mathematically the alien")
     print("population will make no sense. If you want to try the program with")
     print("numbers that are greater than 0, please run it again.")
-    
+#--------------------------------#Loop--------------------------------------   
+
+#This part of the code is the for loop in our program
+# This code calculates the user input with and out puts how many aliens are on earth after x weeks
 for i in range(elapsedWeeks):
     print("After", i+1, week, "there will be", startAlien * 2 ** (i+1), "aliens.")
     i+1
