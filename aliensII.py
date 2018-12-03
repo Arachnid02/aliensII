@@ -1,6 +1,8 @@
 startAlien = int(-1)
 elapsedWeeks = int(-1)
 week = str("week")
+alienValid = bool(False)
+weekValid = bool(False)
 
 print("This program will calculate the alien population after receiving two")
 print("inputs from you; the amount of aliens that landed on earth, and how")
