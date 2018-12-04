@@ -27,6 +27,7 @@ while alienValid == False: #Boolean which only allows 2 states
        startAlien = int(input("How many aliens landed on earth?\n"))
        if 0 <= startAlien:
             alienValid = True
+            print(str(startAlien) + " aliens landed.");
        else: # if anything other than valid inputs are put in
            print("Since your inputs are less than 1, mathematically the alien")
            print("population will make no sense. If you want to try the program with")
