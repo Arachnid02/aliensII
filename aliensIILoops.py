@@ -35,10 +35,21 @@ while alienValid == False: #Boolean which only allows 2 states
    except ValueError: # handles exceptions 
         print("Put a whole number.")
 
-if elapsedWeeks <= 0:
-    print("Since your inputs are less than 1, mathematically the alien")
-    print("population will make no sense. If you want to try the program with")
-    print("numbers that are greater than 0, please run it again.")
+while weekValid == False:
+   try:
+       elapsedWeeks = int(input("How many weeks have elapsed since they landed?\n"))
+       if 1 <= elapsedWeeks:
+          weekValid = True
+       else:
+          print("Since your inputs are less than 1, mathematically the alien")
+          print("population will make no sense. If you want to try the program with")
+          print("numbers that are greater than 0.")
+          print("")
+
+   except ValueError:
+      print("")
+      print("Please put a whole number.")
+      print("")
 
 #--------------------------------#forLoop--------------------------------------   
 
