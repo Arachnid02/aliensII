@@ -17,24 +17,33 @@ weekValid = bool(False)
 print("This program will calculate the alien population after receiving two")
 print("inputs from you; the amount of aliens that landed on earth, and how")
 print("many weeks have elapsed since they landed.\n")
-startAlien = int(input("How many aliens landed on earth?\n"))
-elapsedWeeks = int(input("How many weeks have elapsed since they landed?\n"))
 
 #-----------------------------#Calculation----------------------------------
 
 #This section is the calculations that will determine if the user inputed a valid answer
 #This would be the semi-dumby answer proof code which sends the user to the end
 #if inputed a invalid answer like a negative number
- if startAlien <= 0:
-    print("Since your inputs are less than 1, mathematically the alien")
-    print("population will make no sense. If you want to try the program with")
-    print("numbers that are greater than 0, please run it again.")
+
+#This fuction allow us to repeat a set of questions to a user until proper answer given
+while alienValid == False: #Boolean which only allows 2 states 
+   try: #used to catch exception
+       startAlien = int(input("How many aliens landed on earth?\n"))
+       if 0 <= startAlien:
+            alienValid = True
+       else: # if anything other than valid inputs are put in
+           print("Since your inputs are less than 1, mathematically the alien")
+           print("population will make no sense. If you want to try the program with")
+           print("numbers that are greater than 0, please run it again.")
+
+   except ValueError: # handles exceptions 
+        print("Put a whole number.")
 
 if elapsedWeeks <= 0:
     print("Since your inputs are less than 1, mathematically the alien")
     print("population will make no sense. If you want to try the program with")
     print("numbers that are greater than 0, please run it again.")
-#--------------------------------#Loop--------------------------------------   
+
+#--------------------------------#forLoop--------------------------------------   
 
 #This part of the code is the for loop in our program
 # This code calculates the user input with and out puts how many aliens are on earth after x weeks
