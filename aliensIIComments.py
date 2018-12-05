@@ -1,6 +1,3 @@
-#In this program we will be adding while loops to our first version of aliens.py
-#This will show how we can be effienct and make our program anti-nonsense proof.
-
 #This part of the code is the initialized variables.
 # This was used to set the foundation of our loop code
 startAlien = int(-1)
@@ -38,10 +35,22 @@ while alienValid == False: #Boolean which only allows 2 states
    except ValueError: # handles exceptions 
         print("Put a whole number.")
 
-if elapsedWeeks <= 0:
-    print("Since your inputs are less than 1, mathematically the alien")
-    print("population will make no sense. If you want to try the program with")
-    print("numbers that are greater than 0, please run it again.")
+#This function allows us to repeat a set of questions to a user until proper answer given
+while weekValid == False: #Boolean which only allows 2 states
+   try: #Used to catch exceptions
+       elapsedWeeks = int(input("How many weeks have elapsed since they landed?\n"))
+       if 1 <= elapsedWeeks:
+          weekValid = True
+       else: #if anything other than valid inputs are put in
+          print("Since your inputs are less than 1, mathematically the alien")
+          print("population will make no sense. If you want to try the program with")
+          print("numbers that are greater than 0.")
+          print("")
+
+   except ValueError: #handles exceptions
+      print("")
+      print("Please put a whole number.")
+      print("")
 
 #--------------------------------#forLoop--------------------------------------   
 
