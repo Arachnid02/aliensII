@@ -5,6 +5,8 @@ elapsedWeeks = int(-1)
 week = str("week")
 alienValid = bool(False)
 weekValid = bool(False)
+startAlienN = str("alien")
+elapsedWeeksN = str("week")
 
 #------------------------#Explanation/user input----------------------------
 
@@ -26,7 +28,10 @@ while alienValid == False: #Boolean which only allows 2 states
    try: #used to catch exception
        startAlien = int(input("How many aliens landed on earth?\n"))
        if 0 <= startAlien:
-            alienValid = True
+           alienValid = True
+           if startAlien > 1: #checks to see if the value of startAlien is larger than 1
+              startAlienN = "aliens" #if it is change the value of startAlienN to 'aliens'
+           print("There were", startAlien, startAlienN, "that landed on earth.") #gives feedback to the user
        else: # if anything other than valid inputs are put in
            print("Since your inputs are less than 1, mathematically the alien")
            print("population will make no sense. If you want to try the program with")
@@ -41,6 +46,9 @@ while weekValid == False: #Boolean which only allows 2 states
        elapsedWeeks = int(input("How many weeks have elapsed since they landed?\n"))
        if 1 <= elapsedWeeks:
           weekValid = True
+          if elapsedWeeks > 1: #checks to see if the value of elapsedWeeks is larger than 1
+             elapsedWeeksN = "weeks" #if it is change the value of elapsedWeeksN to 'weeks'
+          print(elapsedWeeks, elapsedWeeksN, "have passed.") # gives feedback to the user
        else: #if anything other than valid inputs are put in
           print("Since your inputs are less than 1, mathematically the alien")
           print("population will make no sense. If you want to try the program with")
